@@ -1,36 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>GitHub Repo finder</title>
-  
+    <title>National Park finder</title>
+    <link rel="shortcut icon" href="#">
     <link rel="stylesheet" href="index.css">
 </head>
-
 <body>
-    <section class="container">
-        <h1>Github API Project</h1>
+    <div class="container">
+        <h1>National Park Finder</h1>
 
-        <form id="js-form" class="search-form css-search">
-            <label id="search-label" for="username">Enter a GitHub user handle:</label>
-            <input type="text" name="username" id="js-username username" class="js-username css-search" required>
-            <button type="submit" id="find-btn" class="css-search">Find</button>
-
+        <form id="js-form">
+            <label for="search-term">State Abbreviaton</label>
+            <input type="text" name="search-term" id="js-search-term" placeholder="CA,AZ,AK" required>
+            <div></div>
+            <label for="max-results">Maximum results to return</label>
+            <input type="number" name="max-results" id="js-max-results" value="10">
+            <div></div>
+            <input type="submit" value="Go!">
         </form>
-        <main>
-            <div class="flex-container">
-                <section class="js-results results hidden"></section>
-            </div>
 
-        
-        </main>
-    </section>
-    <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
-        crossorigin="anonymous"></script>
+        <p id="js-error-message" class="error-message"></p>
+        <section id="results" class="hidden">
+          <h2>Search results</h2>
+          <ul id="results-list">
+          </ul>
+        </section>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
     <script src="index.js"></script>
 </body>
-
 </html>
